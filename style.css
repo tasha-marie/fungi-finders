@@ -158,7 +158,10 @@
     background-color: var(--background-main);
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--ff-heading);
     color: var(--text-high-contrast);
   }
@@ -184,8 +187,9 @@
     padding-inline: 1rem;
     box-sizing: content-box;
 
-  &[data="width"="wide"] {
-    max-width: 1330px;
+    &[data="width"="wide"] {
+      max-width: 1330px;
+    }
   }
 }
 
@@ -200,4 +204,3 @@
     width: 1px;
   }
 }
-
