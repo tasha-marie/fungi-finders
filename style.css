@@ -194,6 +194,16 @@
     gap: var(--grid-flow-gap, 1rem);
   }
 
+  .grid-auto-fit {
+    --auto-fit-min-col-size: 250px;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(--auto-fit-min-col-size), 100%)
+    );
+  }
+
   .equal-columns {
     display: grid;
     gap: var(--equal-columns-gap, 1rem);
@@ -265,7 +275,7 @@
   .site-header {
     padding-block: 1rem;
   }
-  
+
   .site-header__inner {
     display: flex;
     gap: 0.5 rem 1rem;
