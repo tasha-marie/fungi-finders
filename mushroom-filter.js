@@ -9,9 +9,9 @@ const currentFilters = {
 };
 
 cards.forEach((card, index) => {
-    const mushroomId = `mushroom-${index + 1}`;
-    card.style.viewTransitionName = `card-${mushroomId}`;
-})
+  const mushroomId = `mushroom-${index + 1}`;
+  card.style.viewTransitionName = `card-${mushroomId}`;
+});
 
 seasonalFilter.addEventListener("change", updateFilter);
 edibleFilter.addEventListener("change", updateFilter);
@@ -62,3 +62,13 @@ function enableFiltering() {
 }
 
 enableFiltering();
+
+const resizeObserver = new ResizeObserver((entries) => {
+  document.body.classList.add("resizing");
+
+  requestAnimationFrame(() => {
+    document.body.classList.remove("resizing");
+  });
+});
+
+resizeObserver.observe(document.body);
