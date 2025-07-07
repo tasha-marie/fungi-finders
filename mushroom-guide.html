@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <script src="./main.js" defer></script>
+    <script src="./mushroom-filter.js" defer></script>
   </head>
   <body>
     <a href="#main" class="skip-to-main"> Skip to main content"</a>
@@ -90,33 +91,33 @@
           <div class="flow">
             <h2 class="section-title">Get to know your mushrooms</h2>
             <div class="flex-group">
-              <select>
+              <select name="season" id="season">
                 <option value="all">Season: All</option>
                 <option value="spring">Spring</option>
                 <option value="summer">Summer</option>
                 <option value="fall">Fall</option>
               </select>
-              <select>
+              <select name="edible" id="edible">
                 <option value="all">Type: All</option>
                 <option value="edible">Edible</option>
-                <option value="all">Toxic</option>
+                <option value="toxic">Toxic</option>
               </select>
             </div>
             <!--Grid of mushrooms-->
-            <div class="grid-auto-fit">
+            <div class="grid-auto-fill">
               <!--12 cards here-->
-              <div class="card">
+              <div class="card" hidden>
                 <h3 class="card__title">Chanterelle</h3>
                 <ul
                   class="tag-list"
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="summer">
+                  <li data-season="summer">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -136,11 +137,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="toxic">
+                  <li data-edible="toxic">
                     <span class="visually-hidden">This mushroom is </span>
                     Toxic
                   </li>
-                  <li data-attribute="spring">
+                  <li data-season="spring">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -160,11 +161,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="summer">
+                  <li data-season="summer">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -184,11 +185,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="toxic">
+                  <li data-edible="toxic">
                     <span class="visually-hidden">This mushroom is </span>
                     Toxic
                   </li>
-                  <li data-attribute="summer">
+                  <li data-season="summer">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -208,11 +209,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="fall">
+                  <li data-season="fall">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -232,11 +233,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="fall">
+                  <li data-season="fall">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -256,11 +257,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="toxic">
+                  <li data-edible="toxic">
                     <span class="visually-hidden">This mushroom is </span>
                     Toxic
                   </li>
-                  <li data-attribute="summer">
+                  <li data-season="summer">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -280,11 +281,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="summer">
+                  <li data-season="summer">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -304,11 +305,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="fall">
+                  <li data-season="fall">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -328,11 +329,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="fall">
+                  <li data-season="fall">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -352,11 +353,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="toxic">
+                  <li data-edible="toxic">
                     <span class="visually-hidden">This mushroom is </span>
                     Toxic
                   </li>
-                  <li data-attribute="spring">
+                  <li data-season="spring">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -376,11 +377,11 @@
                   role="list"
                   aria-label="Mushroom characteristics"
                 >
-                  <li data-attribute="edible">
+                  <li data-edible="edible">
                     <span class="visually-hidden">This mushroom is </span>
                     Edible
                   </li>
-                  <li data-attribute="fall">
+                  <li data-season="fall">
                     <span class="visually-hidden">
                       Best season to harvest this mushroom is
                     </span>
@@ -395,6 +396,7 @@
                   <p>Verify identification - has toxic look-alikes</p>
                 </div>
               </div>
+              <div class="no-matches" hidden>No matches for these filters</div>
             </div>
           </div>
         </div>

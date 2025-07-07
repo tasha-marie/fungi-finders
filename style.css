@@ -207,13 +207,13 @@
     gap: var(--grid-flow-gap, 1rem);
   }
 
-  .grid-auto-fit {
-    --auto-fit-min-col-size: 250px;
+  .grid-auto-fill {
+    --auto-fill-min-col-size: 250px;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(
-      auto-fit,
-      minmax(min(var(--auto-fit-min-col-size), 100%), 1fr)
+      auto-fill,
+      minmax(min(var(--auto-fill-min-col-size), 100%), 1fr)
     );
   }
 
@@ -503,23 +503,23 @@
       background-color: var(--tag-bg, red);
     }
 
-    [data-attribute="edible"] {
+    [data-edible="edible"] {
       --tag-bg: var(--background-accent-main);
     }
 
-    [data-attribute="toxic"] {
+    [data-edible="toxic"] {
       --tag-bg: var(--clr-red-500);
     }
 
-    [data-attribute="summer"] {
+    [data-season="summer"] {
       --tag-bg: var(--background-accent-main);
     }
 
-    [data-attribute="spring"] {
+    [data-season="spring"] {
       --tag-bg: var(--clr-teal-500);
     }
 
-    [data-attribute="fall"] {
+    [data-season="fall"] {
       --tag-bg: var(--clr-orange-500);
     }
   }
@@ -552,6 +552,10 @@
 }
 
 @layer utilities {
+  [hidden] {
+    display: none;
+  }
+
   .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
